@@ -1,6 +1,6 @@
-# app
+# Jal in One
 
-A new Flutter project which acts as a water supply management system for the households of Belagavi smart city.
+A new Flutter project for the water supply management system for the households of Belagavi smart city.
 
 ## Getting Started
 
