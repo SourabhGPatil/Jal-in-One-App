@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "627787402333",
+    "project_id": "fyp-user-app",
+    "storage_bucket": "fyp-user-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627787402333:android:c32b5ffb928d3e46d7d1b4",
+        "android_client_info": {
+          "package_name": "com.jalinone.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "627787402333-v6fe1r1tpmuitv21co6nid05rann999v.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXVKfLc-RO97dujj-6cgYVDY7roUxlmBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "627787402333-v6fe1r1tpmuitv21co6nid05rann999v.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

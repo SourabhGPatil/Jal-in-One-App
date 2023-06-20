@@ -1,0 +1,61 @@
+import 'package:app/controllers/data_controller.dart';
+import 'package:app/views/ward_details_screen.dart';
+import 'package:app/views/login_screen.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+
+class AppDrawer extends StatelessWidget {
+
+  //---Instance of DataController---//
+  final DataController controller = Get.find();
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Container(
+        width: 220,
+        child: Drawer(
+          child: ListView(
+            children: [
+              Container(
+                decoration:
+                BoxDecoration(color: Theme.of(context).primaryColor),
+                height: 80,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      //---Display User Name---//
+                      'Menu',
+                      style: TextStyle(
+                          color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25),
+                    ),
+                  ],
+                ),
+              ),
+
+              //--------Bill Payment option at sidebar---//
+              ListTile(
+                leading: Icon(Icons.person),
+                title: const Text('Ward Details'),
+                onTap: () {
+                  Get.back(); //--to close the sidebar--//
+                  Get.to(()=>WardDetailsScreen());
+                },
+              ),
+
+              ListTile(
+                leading: Icon(Icons.logout),
+                title: const Text('LogOut'),
+                onTap: () {
+                  Get.to(() => LoginScreen());
+                },
+              ),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
