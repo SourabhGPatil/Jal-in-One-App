@@ -4,10 +4,9 @@ import 'package:app/views/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-
 class AppDrawer extends StatelessWidget {
 
-  //---Instance of DataController---//
+  // Instance of DataController
   final DataController controller = Get.find();
 
   @override
@@ -19,14 +18,14 @@ class AppDrawer extends StatelessWidget {
           child: ListView(
             children: [
               Container(
-                decoration:
-                BoxDecoration(color: Theme.of(context).primaryColor),
+                // Styling the container with the primary color of the theme
+                decoration: BoxDecoration(color: Theme.of(context).primaryColor),
                 height: 80,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   children: [
                     Text(
-                      //---Display User Name---//
+                      // Displaying the title "Menu"
                       'Menu',
                       style: TextStyle(
                           color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25),
@@ -35,13 +34,13 @@ class AppDrawer extends StatelessWidget {
                 ),
               ),
 
-              //--------Bill Payment option at sidebar---//
+              // Bill Payment option at sidebar
               ListTile(
                 leading: Icon(Icons.person),
                 title: const Text('Ward Details'),
                 onTap: () {
-                  Get.back(); //--to close the sidebar--//
-                  Get.to(()=>WardDetailsScreen());
+                  Get.back(); // Closing the sidebar
+                  Get.to(() => WardDetailsScreen()); // Navigating to WardDetailsScreen
                 },
               ),
 
@@ -49,7 +48,7 @@ class AppDrawer extends StatelessWidget {
                 leading: Icon(Icons.logout),
                 title: const Text('LogOut'),
                 onTap: () {
-                  Get.to(() => LoginScreen());
+                  Get.to(() => LoginScreen()); // Navigating to LoginScreen
                 },
               ),
             ],
