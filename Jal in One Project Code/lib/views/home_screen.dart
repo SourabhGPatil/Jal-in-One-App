@@ -12,7 +12,7 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'login_screen.dart';
 
-//BG Notifications Handler
+// Background Notifications Handler
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   print('Handling the background message :  ${message.messageId}');
 }
@@ -27,16 +27,16 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
 
 
-  //Created an instace of data_controller.dart
+  // Create an instance of DataController
   final DataController controller = Get.put(DataController());
 
-  //Created an instace of payment_controller.dart
+  // Create an instance of PaymentController
   final PaymentController paymentController = Get.put(PaymentController());
 
-  // //Created an instace of auth_controller.dart
+  // Created an instace of auth_controller.dart
   // final AuthController authController = Get.put(AuthController());
 
-  //Instance of FirebaseAuth
+  // Create an instance of FirebaseAuth
   final FirebaseAuth auth = FirebaseAuth.instance;
 
   FirebaseMessaging _messaging = FirebaseMessaging.instance;
@@ -45,13 +45,13 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   void initState() {
-    //TODO: implement initState
+    // Implement the initState method
     super.initState();
     getToken();
     initMessaging();
   }
 
-  //signout function
+  // Sign out function
   signOut() async {
     await auth.signOut();
     Navigator.pushReplacement(
@@ -59,10 +59,8 @@ class _HomeScreenState extends State<HomeScreen> {
   }
 
 
-
   @override
   Widget build(BuildContext context) {
-
     WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
       controller.getUserData();
     });
@@ -83,7 +81,8 @@ class _HomeScreenState extends State<HomeScreen> {
         ],
       ),
 
-      //----B0DY OF THE HOMESCREEN----//
+
+      // Body of the HomeScreen
       body: GetBuilder<DataController>(
         builder: (controller) => controller.loginUserData.isEmpty
             ? Center(
@@ -96,7 +95,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: [
 
-                  //--WARD NO.--//
+                  //--Ward Number--//
                   Container(
                     height: 100,
                     margin: EdgeInsets.all(20),
@@ -135,11 +134,7 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
 
 
-
-
-
-
-                  //--TAP NO.--//
+                  //--Tap Number--//
                   Container(
                     height: 100,
                     margin: EdgeInsets.all(20),
@@ -176,8 +171,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-
-
 
 
                   //--Owner Name--//
@@ -219,7 +212,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
 
 
-
                   //--Sequence No.--//
                   Container(
                     height: 100,
@@ -257,8 +249,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-
-
 
 
                   //--Bill Due--//
@@ -329,8 +319,6 @@ class _HomeScreenState extends State<HomeScreen> {
                   ),
 
 
-
-
                   //--No. of Taps--//
                   Container(
                     height: 100,
@@ -368,8 +356,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-
-
 
 
                   //--Tap Size--//
@@ -410,8 +396,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
 
-
-
                   //--Tap Type--//
                   Container(
                     height: 100,
@@ -450,8 +434,6 @@ class _HomeScreenState extends State<HomeScreen> {
                     ),
                   ),
 
-
-
                   //--Tap Usage--//
                   Container(
                     height: 100,
@@ -489,8 +471,6 @@ class _HomeScreenState extends State<HomeScreen> {
                       ],
                     ),
                   ),
-
-
                 ],
               ),
             );
@@ -500,10 +480,19 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 
+
   //---Notification Part---//
-  Future<void> getToken() async {
+
+  // Function to retrieve the notification token
+  Future<void> getToken() async
+  {
+    // Retrieve the Firebase Cloud Messaging token
     String? token = await FirebaseMessaging.instance.getToken();
+
+    // Print a message indicating that the token is being printed
     print("NOTTTTTTTTTTTTTTTTTIFICATION");
+
+    // Print the notification token
     print(token);
   }
 
@@ -514,6 +503,7 @@ class _HomeScreenState extends State<HomeScreen> {
     var iosInit = IOSInitializationSettings();
     var initSetting = InitializationSettings(android: androidInit, iOS: iosInit);
 
+    // Initialize the FlutterLocalNotificationsPlugin
     flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
     flutterLocalNotificationsPlugin.initialize(initSetting);
 
@@ -527,10 +517,12 @@ class _HomeScreenState extends State<HomeScreen> {
     var generalNotificationDetails =
     NotificationDetails(android: androidDetails, iOS: iosDetails);
 
+    // Listen for incoming messages from Firebase Messaging
     FirebaseMessaging.onMessage.listen((RemoteMessage message) {
       RemoteNotification notification = message!.notification!;
       AndroidNotification android = message.notification!.android!;
       if(notification != null && android != null) {
+        // Show the local notification using FlutterLocalNotificationsPlugin
         flutterLocalNotificationsPlugin.show(notification.hashCode,
             notification.title, notification.body, generalNotificationDetails);
       }
