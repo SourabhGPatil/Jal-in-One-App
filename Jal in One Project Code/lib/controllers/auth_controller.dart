@@ -1,3 +1,4 @@
+// Importing necessary dependencies and packages
 import 'package:app/controllers/common_dialog.dart';
 import 'package:app/views/home_screen.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';

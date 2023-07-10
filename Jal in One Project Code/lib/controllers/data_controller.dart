@@ -1,3 +1,4 @@
+// Importing necessary dependencies and packages
 import 'package:app/controllers/auth_controller.dart';
 import 'package:app/controllers/common_dialog.dart';
 import 'package:get/get.dart';

@@ -1,7 +1,9 @@
+// Importing necessary dependencies and packages
 import 'package:app/controllers/auth_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// This class represents the SignUpScreen widget, which is a StatefulWidget.
 class SignUpScreen extends StatefulWidget {
   SignUpScreen({Key? key}) : super(key: key);
 
@@ -9,8 +11,12 @@ class SignUpScreen extends StatefulWidget {
   _SignUpScreenState createState() => _SignUpScreenState();
 }
 
+// This class represents the state of the SignUpScreen widget.
 class _SignUpScreenState extends State<SignUpScreen> {
+  // A GlobalKey that uniquely identifies the Form widget in the tree.
   final _formKey = GlobalKey<FormState>();
+
+  // A map to store the user signup data.
   Map<String, String> userSignupData = {
     "ward_no": "",
     "tap_rr_no":"",
@@ -18,9 +24,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
     "password": ""
   };
 
-  //Find the instance "controller"
+  // Finding the instance of the AuthController using Get.find()
   AuthController controller = Get.find();
 
+  // Method for signing up the user
   signUp() {
     if (_formKey.currentState!.validate()) {
       print("Form is valid ");
@@ -32,6 +39,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Building the UI for the SignUpScreen widget
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(

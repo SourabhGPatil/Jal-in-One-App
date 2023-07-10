@@ -1,3 +1,4 @@
+// Importing necessary dependencies and packages
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app/controllers/auth_controller.dart';
