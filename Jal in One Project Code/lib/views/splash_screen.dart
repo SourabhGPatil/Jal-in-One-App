@@ -1,20 +1,24 @@
-import 'dart:async';
-import 'package:flutter/material.dart';
-import 'dart:ui';
-import 'package:flutter/services.dart';
-import 'login_screen.dart';
+// Importing necessary dependencies and packages
+import 'dart:async'; // Importing the async package for Timer functionality
+import 'package:flutter/material.dart'; // Importing the Flutter Material package
+import 'dart:ui'; // Importing the dart:ui package for UI-related functionality
+import 'package:flutter/services.dart'; // Importing the Flutter Services package
+import 'login_screen.dart'; // Importing the LoginScreen widget
 
+// This class represents the SplashScreen widget, which is a StatefulWidget.
 class SplashScreen extends StatefulWidget{
-
   @override
   _SplashScreenState createState() => _SplashScreenState();
 }
 
+// This class represents the state of the SplashScreen widget.
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
 
     super.initState();
+
+    // Using Timer to navigate to the LoginScreen after 5 seconds
     Timer(Duration(seconds: 5),
             ()=>Navigator.pushReplacement(context,
             MaterialPageRoute(builder:
@@ -26,6 +30,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
   @override
   Widget build(BuildContext context) {
+    // Building the UI for the SplashScreen widget
     return Scaffold(
       body: Container(
         width: double.infinity,
@@ -84,3 +89,10 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 }
+
+/*
+* Overall, this code defines the SplashScreen widget and its state. The widget is responsible for displaying a splash screen
+* with a logo and some introductory text. After 5 seconds, it automatically navigates to the LoginScreen using the Timer class.
+* The UI is built using a Container with a gradient background, and the logo and text are centered vertically and horizontally.
+* The CircularProgressIndicator is also displayed to indicate that the app is loading.
+*/
