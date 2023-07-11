@@ -109,3 +109,10 @@ class _SignUpScreenState extends State<SignUpScreen> {
     );
   }
 }
+
+/*
+* Overall, this code defines the SignUpScreen widget and its state. The widget contains a form for user sign-up,
+* including email and password fields. It also includes validation logic and a submission button.
+* The state class extends StatefulWidget and manages the form key, user signup data, and signing up functionality.
+* The Get package is used to find the instance of the AuthController, allowing interaction with the authentication system.
+*/
