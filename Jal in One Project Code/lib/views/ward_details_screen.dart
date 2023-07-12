@@ -1,3 +1,4 @@
+// Importing necessary dependencies and packages
 import 'package:app/controllers/data_controller.dart';
 import 'package:app/controllers/payment_controller.dart';
 import 'package:app/controllers/auth_controller.dart';
@@ -13,9 +14,10 @@ import 'package:firebase_messaging/firebase_messaging.dart';
 
 import 'login_screen.dart';
 
-//Created an instace of data_controller.dart
+// Creating an instance of the DataController
 final DataController controller = Get.put(DataController());
 
+// This class represents the WardDetailsScreen widget, which is a StatefulWidget.
 class WardDetailsScreen extends StatefulWidget {
 
   @override
@@ -23,13 +25,14 @@ class WardDetailsScreen extends StatefulWidget {
 
 }
 
+// This class represents the state of the WardDetailsScreen widget.
 class _WardDetailsScreen extends State<WardDetailsScreen> {
 
   //Instance of FirebaseAuth
   final FirebaseAuth auth = FirebaseAuth.instance;
 
 
-  //signout function
+  //Sign out function
   signOut() async {
     await auth.signOut();
     Navigator.pushReplacement(
@@ -38,10 +41,12 @@ class _WardDetailsScreen extends State<WardDetailsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Triggering the getWardData function in the DataController after the frame is rendered
     WidgetsBinding.instance!.addPostFrameCallback((timeStamp) {
       controller.getWardData();
     });
 
+    // Building the UI for the WardDetailsScreen widget
     return Scaffold(
       appBar: AppBar(
         centerTitle: true,
@@ -109,7 +114,6 @@ class _WardDetailsScreen extends State<WardDetailsScreen> {
                   ),
 
 
-
                   //--Water Supply Date--//
                   Container(
                     height: 100,
@@ -148,11 +152,6 @@ class _WardDetailsScreen extends State<WardDetailsScreen> {
                       ],
                     ),
                   ),
-
-
-
-
-
 
 
                   //--Officer Name--//
@@ -265,3 +264,12 @@ class _WardDetailsScreen extends State<WardDetailsScreen> {
     );
   }
 }
+
+/*
+* Overall, this code imports necessary dependencies and packages.
+* It includes several controllers for managing data, authentication, and payments.
+* It also imports various widgets and packages for UI and functionality.
+* The code defines the WardDetailsScreen widget and its state, which displays ward details.
+* It includes a sign-out function, fetching data using the DataController, and building the UI using a ListView.builder.
+* Each item in the list represents a ward, showing ward number, water supply date, officer name, officer contact, and a call button to dial the officer's contact number.
+*/
