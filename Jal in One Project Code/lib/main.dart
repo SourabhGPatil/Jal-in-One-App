@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// Importing necessary dependencies and packages
 import 'package:app/views/splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -11,57 +11,53 @@ import 'package:app/views/login_screen.dart';
 import 'package:get/get.dart';
 
 
-//BG Notifications Handler
+// Background Notifications Handler
 Future<void> _firebaseMessagingBackgroundHandler(RemoteMessage message) async {
   print('Handling the background message :  ${message.messageId}');
 }
 
+// The main function where the app starts execution
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
+  // Initializing Firebase
   await Firebase.initializeApp();
   FirebaseMessaging.onBackgroundMessage(_firebaseMessagingBackgroundHandler);
 
-
+  // Running the app
   runApp(MyApp());
 }
 
+
+// This class represents the MyApp widget, which is the root of the application.
 class MyApp extends StatelessWidget {
   final Future<FirebaseApp> _initialization = Firebase.initializeApp();
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    // Building the app using GetMaterialApp for state management
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Jal in one',
       theme: ThemeData(
-        // This is the theme of your application.
-        //
-        // Try running your application with "flutter run". You'll see the
-        // application has a blue toolbar. Then, without quitting the app, try
-        // changing the primarySwatch below to Colors.green and then invoke
-        // "hot reload" (press "r" in the console where you ran "flutter run",
-        // or simply save your changes to "hot reload" in a Flutter IDE).
-        // Notice that the counter didn't reset back to zero; the application
-        // is not restarted.
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.blue, // Setting the primary color theme
       ),
       home: FutureBuilder(
         //Initialize FlutterFire
         future: _initialization,
         builder: (context, snapshot){
-          //check for errors
+          // Checking for errors
           if(snapshot.hasError) {
             return Center
               (child: Text('Could not connect'),
             );
           }
 
-          //Once complete, show your application
+          //Once complete, show your application (i.e., Splash Screen)
           if(snapshot.connectionState == ConnectionState.done) {
             return SplashScreen();
           }
 
-          //Otherwise, show some loading stuff
+          // Otherwise, show loading indicator
           return Center(child: CircularProgressIndicator(),
           );
         },
@@ -70,3 +66,10 @@ class MyApp extends StatelessWidget {
   }
 }
 
+/*
+* Overall, this code imports necessary dependencies and packages.
+* It sets up Firebase initialization and handles background messages for Firebase Messaging.
+* The main function initializes Firebase and runs the app.
+* The MyApp widget serves as the root of the application, setting up the theme and displaying the SplashScreen while Firebase initializes.
+* The app is built using GetMaterialApp for state management and uses Get package for routing and managing states.
+*/
