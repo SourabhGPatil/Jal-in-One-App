@@ -3,9 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:app/controllers/auth_controller.dart';
 
-//Import Signup page
+// Importing the SignUpScreen widget
 import 'package:app/views/sign_up_screen.dart';
 
+// This class represents the LoginScreen widget, which is a StatefulWidget.
 class LoginScreen extends StatefulWidget {
   LoginScreen({Key? key}) : super(key: key);
 
@@ -13,18 +14,22 @@ class LoginScreen extends StatefulWidget {
   _LoginScreenState createState() => _LoginScreenState();
 }
 
+// This class represents the state of the LoginScreen widget.
 class _LoginScreenState extends State<LoginScreen> {
   final _formKey = GlobalKey<FormState>();
   Map<String, String> userLoginData = {"ward_no": "", "tap_rr_no":"","email": "", "password": ""};
 
+  // Find the instance of AuthController
   AuthController controller = Get.put(AuthController());
 
+  // Function to handle login
   login() {
     if (_formKey.currentState!.validate()) {
       print("Form is valid ");
       _formKey.currentState!.save();
       print('Data for login $userLoginData');
 
+      // Call the login function in the AuthController
       controller.login(userLoginData["ward_no"], userLoginData["tap_rr_no"], userLoginData["email"], userLoginData["password"]);
 
       print('Data for login2 $userLoginData');
@@ -33,6 +38,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    // Building the UI for the LoginScreen widget
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       appBar: AppBar(
@@ -135,7 +141,6 @@ class _LoginScreenState extends State<LoginScreen> {
                     child: GestureDetector(
                       onTap: () {
                         //Routing to SignUp Page
-
                         Get.to(() => SignUpScreen());
 
                       },
@@ -158,3 +163,11 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
+
+/*
+* Overall, this code imports necessary dependencies and packages.
+* It includes the AuthController for managing authentication.
+* The code defines the LoginScreen widget and its state, which allows users to log in with their email, password, ward number, and tap number/RRR number. It validates the input fields and calls the login function in the AuthController to handle the login.
+* The UI is built using a Card, Form, and various form fields, including text input fields and an elevated button for login.
+* It also includes a link to navigate to the SignUpScreen.
+*/
