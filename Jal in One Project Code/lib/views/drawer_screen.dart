@@ -5,6 +5,7 @@ import 'package:app/views/login_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+// This class represents the AppDrawer widget, which is a StatelessWidget.
 class AppDrawer extends StatelessWidget {
 
   // Instance of DataController
@@ -12,6 +13,7 @@ class AppDrawer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    // Building the UI for the AppDrawer widget
     return SafeArea(
       child: Container(
         width: 220,
@@ -59,3 +61,12 @@ class AppDrawer extends StatelessWidget {
     );
   }
 }
+
+/*
+* Overall, this code imports necessary dependencies and packages.
+* It includes the DataController for managing data.
+* The code defines the AppDrawer widget, which represents a sidebar menu in the app.
+* It displays a title "Menu" and provides options for Ward Details and LogOut.
+* When an option is tapped, it closes the sidebar and navigates to the respective screen using Get package for routing.
+* The UI is built using a Drawer and ListTile widgets.
+*/
