@@ -531,3 +531,11 @@ class _HomeScreenState extends State<HomeScreen> {
     );
   }
 }
+
+/*
+* Overall, this code imports necessary dependencies and packages.
+* It includes the DataController, PaymentController, and AuthController for managing data and authentication.
+* The code defines the HomeScreen widget, which represents the main screen of the app. It displays user data and provides a sign-out button.
+* The UI is built using various widgets such as AppBar, ListView, Card, and Container.
+* It also includes code for handling notifications using Firebase Messaging and Flutter Local Notifications.
+*/
