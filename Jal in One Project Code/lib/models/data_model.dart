@@ -28,3 +28,11 @@ class Ward {
     }
   );
 }
+
+
+/*
+* The code defines a Dart class called "Ward" that represents information about a ward. 
+* It contains instance variables to store various attributes of a ward, such as ward number, owner name, tap number, bill due, number of taps, sequence number, tap size, tap type, and tap usage. 
+* The class also has a constructor that initializes these variables using named parameters. 
+* The "required" keyword ensures that these parameters are mandatory while creating an instance of the "Ward" class.
+*/
