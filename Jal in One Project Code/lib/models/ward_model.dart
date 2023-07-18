@@ -18,3 +18,13 @@ class WardData {
     }
   );
 }
+
+/*
+* The code defines a Dart class called "WardData" that represents data about a ward.
+
+* It contains instance variables to store various attributes of the ward data, such as ward number, officer's contact information, officer's name, water supply date, and ward ID.
+
+* The class also has a constructor that initializes these variables using named parameters.
+
+* The "required" keyword ensures that these parameters are mandatory while creating an instance of the "WardData" class.
+*/
