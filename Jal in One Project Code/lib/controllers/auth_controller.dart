@@ -7,18 +7,20 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 
-class AuthController extends GetxController{ //Right
-
+class AuthController extends GetxController
+{ 
   //To get the user id
   static var userId;
   static var tap_no;
   static var w_no;
   static var e_mail;
 
+  // Function for user sign up
   Future<void> signUp(ward_no,tap_rr_no,email,password) async{
     try {
       //Shows the loading circle
       CommonDialog.showLoading();
+      // Create user with email and password using Firebase Authentication
       UserCredential userCredential = await FirebaseAuth.instance.createUserWithEmailAndPassword(
         //Email and password is taken here
           email: email.trim(),
@@ -62,17 +64,20 @@ class AuthController extends GetxController{ //Right
         print('The password provided is too weak.');
 
         /////////////////////////
-      } else if (e.code == 'email-already-in-use') {
+      }
+      else if (e.code == 'email-already-in-use') {
         CommonDialog.showErrorDialog(description: 'showErrorDialog ');
         print('The account already exists for that email.');
       }
-    } catch (e) {
+    }
+    catch (e) {
       CommonDialog.hideLoading();
       CommonDialog.showErrorDialog(description: 'Sorry! Something went wrong.');
       print(e);
     }
   }
 
+  // Function for user login
   Future<void> login(ward_no,tap_rr_no,email,password) async {
     print("FROM LOGIN PAGE BAYBAY");
     print('$ward_no,$tap_rr_no,$email,$password');
@@ -84,6 +89,8 @@ class AuthController extends GetxController{ //Right
 
     try {
       CommonDialog.showLoading();
+
+      // Sign in with email and password using Firebase Authentication
       UserCredential userCredential = await FirebaseAuth.instance
           .signInWithEmailAndPassword(
           email: email.trim(),
@@ -108,9 +115,21 @@ class AuthController extends GetxController{ //Right
       }
     }
   }
-
-
-
-
-
 }
+
+/**
+The code includes an AuthController class responsible for user authentication and authorization functionalities.
+It imports necessary dependencies and packages such as 'common_dialog.dart', 'home_screen.dart', 'cloud_firestore.dart', 'firebase_auth.dart', 'get.dart', and 'shared_preferences.dart'.
+
+The AuthController class has functions for user sign up and login. 
+The signUp function takes parameters like ward number, tap number, email, and password to create a user using Firebase Authentication.
+It also performs database operations using Cloud Firestore.
+
+The login function handles user login by taking email and password parameters and authenticating the user using Firebase Authentication.
+If the login is successful, the user is directed to the HomeScreen.
+
+The class includes static variables to store user-related information like user ID, tap number, ward number, and email.
+These variables are accessible throughout the class.
+
+The class utilizes the CommonDialog class for displaying loading screens and error dialogs during sign-up and login operations.
+*/
