@@ -3,10 +3,9 @@
 ![logo_foreground](https://github.com/SourabhGPatil/Jal-in-One-App/assets/81312909/8f56cea4-d261-46ac-a540-706e88f61e00)
 
 
-A water supply management system for the households of Belagavi smart city
+Introducing "Jal in One" - A Transformative Water Management Android App
 
-"Jal in One," an Android app for regions without 24-hour water supply. It provides timely notifications on water availability, encourages efficient water utilization, and enables online bill payments. Users can also access contact info for water supply contractors, ensuring prompt issue resolution. "Jal in One" enhances the water supply experience, improving the quality of life for residents in such areas.
-
+Addressing critical water supply inadequacies in regions with intermittent access, our groundbreaking Android app, "Jal in One," tackles the urgent need for efficient water resource management. It offers real-time water availability updates, advocates water conservation, facilitates online bill payments, and establishes direct contractor communication for swift issue resolution. The core objective of "Jal in One" is to enhance water supply across Belagavi's 58 wards significantly.
 
 ------------
 
