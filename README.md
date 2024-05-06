@@ -41,7 +41,8 @@ this system to work people have to be up to date with the regular changes in the
 be in sync with newspapers and TV channels. This is a good practice but however, but there may
 arise some circumstances where you aren’t in contact with these details therefore it becomes rather
 a bothersome task.
-3.2 Problems with the existing system
+
+## Problems with the existing system
 In a city like Belgaum, the majority of the areas yet don’t have a 24-hour water supply. These
 areas usually get the water supply after 2 to 7 days, depending on situations. Here are some of the
 problems we found out after surveying in such areas –
@@ -64,3 +65,18 @@ information as he/she might not have his contact number.
 PROBLEM NO.05 –
 The water board officers/employees have to visit the areas of the city to issue the water bill to
 each household and collect it. This analogue system of collecting bills is inefficient.
+
+# Objectives of the project
+The main aim of this project is to provide an application that will act as the one-stop solution to
+all the water supply problems of a household and help the society as a whole to conserve water.
+This project will be very useful in remote areas on India that are yet not having a 24 hours water
+supply and are dependent on their local water body for the supply of drinking water.
+The objectives of the project are:
+➢ Notify the users on what day and time their particular sector is getting the drinking water
+supply.
+➢ Notify the users if there are any delays in the water supply.
+➢ Provide an interface for the users to check their water bill and also notify them about the bill’s
+due date.
+➢ Ease in accessing the contact information of a sector’s water supply contractor/officer.
+➢ Reduce the dependency on the traditional way of paying the water bill by digitalizing the
+process.
