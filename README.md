@@ -80,3 +80,13 @@ due date.
 ➢ Ease in accessing the contact information of a sector’s water supply contractor/officer.
 ➢ Reduce the dependency on the traditional way of paying the water bill by digitalizing the
 process.
+
+# Software Architecture Diagram
+![image](https://github.com/SourabhGPatil/Jal-in-One-App/assets/81312909/0ec1d5e2-6fbf-4e77-aeac-b93a67731000)
+
+Our proposed system is built using these tools –
+• Dart - Programming Language.
+• Flutter – Software Development Kit (SDK).
+• Firebase Realtime Database – Database.
+• Razorpay API – Application Programming Interface.
+• Firebase – Development and Maintenance platform.
