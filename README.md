@@ -1,4 +1,4 @@
-# Jal-in-One-App
+# Jal in One Application
 
 ![logo_foreground](https://github.com/SourabhGPatil/Jal-in-One-App/assets/81312909/8f56cea4-d261-46ac-a540-706e88f61e00)
 
@@ -46,23 +46,23 @@ a bothersome task.
 In a city like Belgaum, the majority of the areas yet don’t have a 24-hour water supply. These
 areas usually get the water supply after 2 to 7 days, depending on situations. Here are some of the
 problems we found out after surveying in such areas –
-#### PROBLEM NO.01 –
+- PROBLEM NO.01 –
 The citizens living in the areas that don’t have a 24 hours water supply need to manually note
 down in their calendars or remember what day they are getting the water supply.
-#### PROBLEM NO.02 –
+- PROBLEM NO.02 –
 In some cases, due to some technical difficulties with water supply, an area may not get the water
 supply on the supposed day and time. It may be challenging to convey the water supply delay to
 the citizens quickly. This problem disrupts the stored water management of a household as they
 may not be prepared for the delay in the water supply.
-#### PROBLEM NO.03 –
+- PROBLEM NO.03 –
 Due to these irregularities in the water supply timing, people usually store excessive water for
 their households. If this water is not used, the people throw away this water, thus resulting in
 water wastage.
-#### PROBLEM NO.04 –
+- PROBLEM NO.04 –
 If there are any grievances from the user regarding the water supply or if they want to give any
 feedback to the area’s Water Supply Officer, then the citizen has to search for his contact
 information as he/she might not have his contact number.
-#### PROBLEM NO.05 –
+- PROBLEM NO.05 –
 The water board officers/employees have to visit the areas of the city to issue the water bill to
 each household and collect it. This analogue system of collecting bills is inefficient.
 
